@@ -1,0 +1,4115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Korttipeli</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<style>
+
+.form-control{
+width 50px;
+}
+#nimi3,#nimi4,#nimi5 {
+display:none;
+}
+#laatikko2 {
+display:none;
+}
+#kortti1,#kortti2,#kortti3, #kortti4,#kortti5,#kortti6, #kortti7,#kortti8,#kortti9, #kortti10{
+width:31%;
+margin: 0.8%;
+display:none;}
+#virhe {
+color:red;
+display:none;}
+#loppu {
+color:red;}
+
+#vasenlaatikko {
+
+width:50%;
+float:left;
+}
+#oikealaatikko {
+float:left;
+width:50%;
+}
+#tyyppi {
+width: 95%;
+}
+
+#pelajat {
+width: 95%;}
+
+#nimi1,#nimi2,#nimi3,#nimi4 {
+margin-top:3px;}
+@media only screen and (min-width: 300px ) {
+
+	#vasenlaatikko2, #oikealaatikko2,#vasenlaatikko3, #oikealaatikko3 {
+width:100%;
+float:left;
+}
+	}
+
+	@media only screen and (min-width: 480px ) {
+#vasenlaatikko2, #oikealaatikko2,#vasenlaatikko3, #oikealaatikko3 {
+float:left;
+width:50%;
+}
+#nimi1,#nimi2,#nimi3,#nimi4 {
+width:95%;
+}
+
+}
+	
+	@media only screen and (max-width: 600px ) {
+	
+	#kuvanpaika1,#kuvanpaika2,#kuvanpaika3,#kuvanpaika4,#kuvanpaika5,#kuvanpaika6,#kuvanpaika7,#kuvanpaika8,#kuvanpaika9 {
+width:60%;
+margin-left: 20%;
+margin-right: 20%;
+}
+	
+#kortti1,#kortti2,#kortti3, #kortti4,#kortti5,#kortti6, #kortti7,#kortti8,#kortti9, #kortti10{
+width:100%;
+
+}
+
+}
+
+
+
+
+
+
+
+</style>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Korttipeli</a>
+                    </li>
+                    
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tekemistä Mikkelissä <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="kuntosalit.html">Kuntosalit</a></li>
+          <li><a href="uimahalit.html">Uimahalit</a></li>
+          <li><a href="nahtavyydet.html">Nähtävyydet</a></li>
+        </ul>
+      </li>
+					
+                    <li>
+                        <a href="contact.html">Palaute</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Korttipeli</h1>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div id="aloituslaatikko">
+                <p>Pelin säännöt:
+
+Pelaajat myötäpäivään kiertäen ottavat kortin yksitellen, lukevat säännön ja toimivat sen mukaan. Sitten asettavat kortit eteensä kuvapuoli ylöspäin.</p>
+<div id="vasenlaatikko">
+              Pelaajien määrä: <select class="form-control" id="pelajat">
+ 
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+   
+  </select> </div> 
+  <div id="oikealaatikko"> Pelin tyyppi: <select class="form-control" id="tyyppi">
+ 
+  <option value="1">Kuntopiiri</option>
+  <option value="2">Juomapeli</option>
+
+  </select> 
+  </div>
+</br>
+   
+ 
+
+<div style="width:100%;float:left;"> Pelaajien nimet:</div>
+  
+    
+      <div id="vasenlaatikko2">
+        <input id="nimi1"  class="form-control"  placeholder="Pelaaja 1"></input>
+     </div>
+	 <div id="oikealaatikko2">
+        <input id="nimi2" class="form-control"  placeholder="Pelaaja 2"></input>
+      </div>
+        
+		<div id="vasenlaatikko3">
+        <input id="nimi3"  class="form-control"  placeholder="Pelaaja 3"></input>
+     </div>
+       <div id="oikealaatikko3">
+       <input id="nimi4"  class="form-control"  placeholder="Pelaaja 4"></input>
+		</div>
+
+
+</br>
+<div id="virhe" style="width:100%;float:left">Syötä pelaajien nimet</div>
+
+	
+</div>
+<div style="width:100%;float:left;">
+</br>
+
+                    
+                    
+                        <button id="nappi">Aloita</button>
+                    
+                    
+                    
+               
+                 </div>   
+				 
+<div id="kaikkikortit" style="width:100%;float:left;">
+<section id="pelinstart">
+<div id="korttipakka">
+
+<div  style="float:left;"  id="kortti1" class="kortit"> 
+
+<div class="caption" id="nimenpaika1"></div>
+    <div class="thumbnail">
+	
+	 <div id="kuvanpaika1"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka1"></div>
+	<div id="nappinpaikka1"></div>
+	</div>  
+    </div>
+  </div>
+   </div>
+   <div   style="float:left;" id="kortti2" class="kortit"> 
+
+<div class="caption" id="nimenpaika2"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika2"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka2"></div>
+	<div id="nappinpaikka2"></div>
+	</div>  
+    </div>
+  
+   </div>
+   <div  style="float:left;"  id="kortti3" class="kortit"> 
+<div style="float:left;" >
+<div class="caption" id="nimenpaika3"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika3"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka3"></div>
+	<div id="nappinpaikka3"></div>
+	</div>  
+    </div>
+  </div>
+   </div>
+   <div  style="float:left;" id="kortti4" class="kortit"> 
+
+<div class="caption" id="nimenpaika4"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika4"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka4"></div>
+	<div id="nappinpaikka4"></div>
+	</div>  
+    </div>
+  
+   </div>
+   <div  style="float:left;"  id="kortti5" class="kortit"> 
+
+<div class="caption" id="nimenpaika5"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika5"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka5"></div>
+	<div id="nappinpaikka5"></div>
+	</div>  
+    </div>
+ 
+   </div>
+   <div style="float:left;"  id="kortti6" class="kortit"> 
+
+<div class="caption" id="nimenpaika6"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika6"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka6"></div>
+	<div id="nappinpaikka6"></div>
+	</div>  
+    </div>
+
+   </div>
+   <div  style="float:left;" id="kortti7" class="kortit"> 
+
+<div class="caption" id="nimenpaika7"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika7"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka7"></div>
+	<div id="nappinpaikka7"></div>
+	</div>  
+    </div>
+ 
+   </div>
+   <div style="float:left;"  id="kortti8" class="kortit"> 
+
+<div class="caption" id="nimenpaika8"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika8"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka8"></div>
+	<div id="nappinpaikka8"></div>
+	</div>  
+  
+  </div>
+   </div>
+   <div style="float:left;"  id="kortti9" class="kortit"> 
+
+<div class="caption" id="nimenpaika9"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika9"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka9"></div>
+	<div id="loppu"> Kortit ovat loppuneet. </div>
+	<button id="lopetus"> Aloita uudestaan</button>
+	</div>  
+    </div>
+
+   
+   <div  id="kortti10" class="kortit"> 
+<div class="col-sm-4" >
+<div class="caption" id="nimenpaika10"></div>
+    <div class="thumbnail">
+	 <div id="kuvanpaika10"></div>
+	<div class="caption">
+	<div id="tehtavanpaikka10"></div>
+	<div id="nappinpaikka10"></div>
+	</div>  
+    </div>
+  </div>
+   </div>
+   </div>
+  </section> 
+
+
+</div>
+
+
+            </div>
+			
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+<script>
+
+	
+			    $(document).ready( function() {
+				
+				$('#laatikko2').show();
+      $('#pelajat').bind('change', function (e) { 
+	  
+	  if( $('#pelajat').val() == '2') {
+          $('#nimi3').hide();
+		  $('#nimi4').hide();
+		 
+		   
+        }     
+       
+        if( $('#pelajat').val() == '3') {
+          
+    	  $('#nimi3').show();
+		  $('#nimi4').hide();
+		 $('#nimi5').hide();
+		  $('#nimi6').hide();
+		   
+        }        
+		else if( $('#pelajat').val() == '4') {
+          
+    	  $('#nimi3').show();
+		  $('#nimi4').show();
+		 $('#nimi5').hide();
+		  $('#nimi6').hide();
+		   
+        } 
+		else if( $('#pelajat').val() == '5') {
+          
+    	  $('#nimi3').show();
+		  $('#nimi4').show();
+		 $('#nimi5').show();
+		  $('#nimi6').hide();
+		   
+        } 
+		else if( $('#pelajat').val() == '6') {
+          
+    	  $('#nimi3').show();
+		  $('#nimi4').show();
+		 $('#nimi5').show();
+		 $('#nimi6').show();
+		   
+        } 
+      }).trigger('change');
+	  
+	 
+	 
+	 
+	   
+var kuva1 = $('<img style="width:100%;" src="img/kortti1.png" alt="...">');
+var kuva2 = $('<img style="width:100%;" src="img/kortti2.png" alt="...">');
+var kuva3 = $('<img style="width:100%;" src="img/kortti3.png" alt="...">');
+var kuva4 = $('<img style="width:100%;" src="img/kortti4.png" alt="...">');
+var kuva5 = $('<img style="width:100%;" src="img/kortti5.png" alt="...">');
+var kuva6 = $('<img style="width:100%;" src="img/kortti6.png" alt="...">');
+var kuva7 = $('<img style="width:100%;" src="img/kortti7.png" alt="...">');
+var kuva8 = $('<img style="width:100%;" src="img/kortti8.png" alt="...">');
+var kuva9 = $('<img style="width:100%;" src="img/kortti9.png" alt="...">');
+
+
+var kortti1= $("<h4>Ässä </h4>" + "<p>Kortin nostanut määrää yhden henkilön juomaan kolme huikkaa.</p>");
+var kortti2= $("<h4>Minä juon, sinä juot</h4>" + "<p>Kortin nostanut saa valita itsensä kanssa jonkun juomaan kolme huikkaa.</p>");
+var kortti4= $("<h4>Riimi</h4>" + "<p>Kortin nostanut pelaaja sanoo jonkun sanan, seuraava keksii siihen rimmaavan sanan. Joka ei keksi viiteen sekuntiin, joutuu juomaan kolme huikkaa.</p>");
+var kortti3= $("<h4> Malja</h4>" + "<p>Kohotetaan malja, kaikki osallistuu yhteen huikkaan.</p>");
+var kortti7= $("<h4>Automerkit </h4>" + "<p>Pelaajat sanovat vuorotellen automerkit. Se kuka ei enään keksi automerkkiä joutuu juomaan 3 huikkaa.</p>");
+var kortti6= $("<h4>Lätsä</h4>" + "<p>Pelaaja joutuu laittamaan jonkun hölmön näköisen hatun päähän. 12 päkin pahvi käy hyvin.</p>");
+var kortti10= $("<h4>Huuto</h4>" + "<p>Kaikkien pelaajien pitää huutaa HOLA AMIGO, viimeinen joutuu juomaan 3 hörppyä </p>");
+var kortti5= $("<h4>Tanssi tai laula </h4>" + "<p>Pelaaja joutuu tanssimaan tai laulamaan jonkin aikaa.</p>");
+var kortti8= $("<h4>Käsi</h4>" + "<p>Nosta käsi ylös ja se kuka viimeisenä nostaa kätensä juo kolme huikkaa</p>");
+var kortti9= $("<h4>Cheek</h4>" + "<p>Laitetaan Cheekiä soimaan. Aina kun Cheek sanoo ”aah”, tulee pelaajan juoda shotti/kulaus.</p>");
+
+
+
+var uusnappi= $('<input type="button" id="jatkaa" value="Jatkaa"/>');
+var uusnappi2= $('<input type="button" id="jatkaa2" value="Jatkaa"/>');
+var uusnappi3= $('<input type="button" id="jatkaa3" value="Jatkaa"/>');
+var uusnappi4= $('<input type="button" id="jatkaa4" value="Jatkaa"/>');
+var uusnappi5= $('<input type="button" id="jatkaa5" value="Jatkaa"/>');
+var uusnappi6= $('<input type="button" id="jatkaa6" value="Jatkaa"/>');
+var uusnappi7= $('<input type="button" id="jatkaa7" value="Jatkaa"/>');
+var uusnappi8= $('<input type="button" id="jatkaa8" value="Jatkaa"/>');
+var uusnappi9= $('<input type="button" id="jatkaa9" value="Jatkaa"/>');
+
+var inputnimi1 = $("#nimi1").val();
+var inputnimi2 = $("#nimi2").val();
+var inputnimi3 = $("#nimi3").val();
+var inputnimi4 = $("#nimi4").val();
+var nimi1 = "<b>" + "Pelaaja:" +" " + inputnimi1 + "</b>";
+var nimi2 = $("#nimi2").val();
+var nimi3 = $("#nimi3").val();
+var nimi4 = $("#nimi4").val();
+
+ 
+
+
+
+ 
+ 
+
+ $("#nappi").click(function(){
+ 
+$('#korttipakka').show();
+$('#kortti2').hide();
+$('#kortti3').hide();
+$('#kortti4').hide();
+$('#kortti5').hide();
+$('#kortti6').hide();
+$('#kortti7').hide();
+$('#kortti8').hide();
+$('#kortti9').hide();
+$('html, body').animate({
+                    scrollTop: $("#pelinstart").offset().top
+                }, 2000);
+
+ var tyhjennys = "";
+  
+   
+   $("#nimenpaika1").html(tyhjennys);
+   $("#kuvanpaika1").html(tyhjennys);
+   $("#tehtavanpaikka1").html(tyhjennys);
+   $("#nappinpaikka1").html(tyhjennys);
+   
+    $("#nimenpaika2").html(tyhjennys);
+   $("#kuvanpaika2").html(tyhjennys);
+   $("#tehtavanpaikka2").html(tyhjennys);
+    $("#nappinpaikka2").html(tyhjennys);
+   
+    $("#nimenpaika3").html(tyhjennys);
+   $("#kuvanpaika3").html(tyhjennys);
+   $("#tehtavanpaikka3").html(tyhjennys);
+    $("#nappinpaikka3").html(tyhjennys);
+   
+    $("#nimenpaika4").html(tyhjennys);
+   $("#kuvanpaika4").html(tyhjennys);
+   $("#tehtavanpaikka4").html(tyhjennys);
+    $("#nappinpaikka4").html(tyhjennys);
+   
+    $("#nimenpaika5").html(tyhjennys);
+   $("#kuvanpaika5").html(tyhjennys);
+   $("#tehtavanpaikka5").html(tyhjennys);
+    $("#nappinpaikka5").html(tyhjennys);
+   
+    $("#nimenpaika6").html(tyhjennys);
+   $("#kuvanpaika6").html(tyhjennys);
+   $("#tehtavanpaikka6").html(tyhjennys);
+    $("#nappinpaikka6").html(tyhjennys);
+   
+    $("#nimenpaika7").html(tyhjennys);
+   $("#kuvanpaika7").html(tyhjennys);
+   $("#tehtavanpaikka7").html(tyhjennys);
+    $("#nappinpaikka7").html(tyhjennys);
+   
+    $("#nimenpaika8").html(tyhjennys);
+   $("#kuvanpaika8").html(tyhjennys);
+   $("#tehtavanpaikka8").html(tyhjennys);
+    $("#nappinpaikka8").html(tyhjennys);
+   
+   $("#nimenpaika9").html(tyhjennys);
+   $("#kuvanpaika9").html(tyhjennys);
+   $("#tehtavanpaikka9").html(tyhjennys);
+    $("#nappinpaikka9").html(tyhjennys);
+   
+
+   function randomnumerot(max) {
+        function range(upTo) {
+            var result = [];
+            for(var i = 0; i < upTo; i++) result.push(i);
+            return result;
+        }
+        function shuffle(o){ 
+            for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+            return o;
+        }
+        var myArr = shuffle(range(max));
+        return function() {
+            return myArr.shift();
+        };
+    }
+
+var randomit = randomnumerot(9),
+    rand = randomit(),
+    result = [];
+while(rand != null) {
+    result.push(rand);
+    rand = randomit();
+}
+
+console.log(result);
+$('#virhe').show();
+
+$('#jatkaa').show();
+$('#jatkaa2').show();
+$('#jatkaa3').show();
+
+
+ var inputnimi1 = $("#nimi1").val();
+ var inputnimi2 = $("#nimi2").val();
+ var inputnimi3 = $("#nimi3").val();
+ var inputnimi4 = $("#nimi4").val();
+ 
+ 
+ //if lause jos 2 pelaajaa
+  if( $('#pelajat').val() == '2' && !(inputnimi1 =="") && !(inputnimi2 =="")) {
+   
+ 
+  $('#virhe').hide();
+ var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+
+if(result[0] == 0) {
+
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva1.clone());
+   $("#tehtavanpaikka1").append(kortti1.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 1) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva2.clone());
+   $("#tehtavanpaikka1").append(kortti2.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 2) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva3.clone());
+   $("#tehtavanpaikka1").append(kortti3.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 3) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva4.clone());
+   $("#tehtavanpaikka1").append(kortti4.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 4) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva5.clone());
+   $("#tehtavanpaikka1").append(kortti5.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 5) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva6.clone());
+   $("#tehtavanpaikka1").append(kortti6.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 6) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva7.clone());
+   $("#tehtavanpaikka1").append(kortti7.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 7) {
+ $("#nimenpaika1").html(nimi1);
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva8.clone());
+   $("#tehtavanpaikka1").append(kortti8.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 8) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva9.clone());
+   $("#tehtavanpaikka1").append(kortti9.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+
+
+function kierros1(){
+if ($(window).width() < 600) {
+   $('#kortti1').hide();
+}
+	$('#kortti2').show();
+	$("#nimenpaika2").html(tyhjennys);
+   $("#kuvanpaika2").html(tyhjennys);
+   $("#tehtavanpaikka2").html(tyhjennys);
+	$("#nappinpaikka2").html(tyhjennys);
+
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[1] == 0) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva1.clone());
+   $("#tehtavanpaikka2").append(kortti1.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[1] == 1) {
+   
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva2);
+   $("#tehtavanpaikka2").append(kortti2.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 2) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva3.clone());
+   $("#tehtavanpaikka2").append(kortti3.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 3) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva4.clone());
+   $("#tehtavanpaikka2").append(kortti4.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 4) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva5.clone());
+   $("#tehtavanpaikka2").append(kortti5.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 5) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva6.clone());
+   $("#tehtavanpaikka2").append(kortti6.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 6) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva7.clone());
+   $("#tehtavanpaikka2").append(kortti7.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 7) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva8.clone());
+   $("#tehtavanpaikka2").append(kortti8.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 8) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva9.clone());
+   $("#tehtavanpaikka2").append(kortti9.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+
+
+    }
+	function kierros2(){
+	if ($(window).width() < 600) {
+   $('#kortti2').hide();
+}
+	$('#kortti3').show();
+	  $("#nimenpaika3").html(tyhjennys);
+   $("#kuvanpaika3").html(tyhjennys);
+   $("#tehtavanpaikka3").html(tyhjennys);
+   $("#nappinpaikka3").html(tyhjennys);
+   
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[2] == 0) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva1.clone());
+   $("#tehtavanpaikka3").append(kortti1.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+       
+}
+if(result[2] == 1) {
+   
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva2.clone());
+   $("#tehtavanpaikka3").append(kortti2.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 2) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva3.clone());
+   $("#tehtavanpaikka3").append(kortti3.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 3) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva4.clone());
+   $("#tehtavanpaikka3").append(kortti4.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 4) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva5.clone());
+   $("#tehtavanpaikka3").append(kortti5.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 5) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva6.clone());
+   $("#tehtavanpaikka3").append(kortti6.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 6) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva7.clone());
+   $("#tehtavanpaikka3").append(kortti7.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 7) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva8.clone());
+   $("#tehtavanpaikka3").append(kortti8.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 8) {
+   $("#nimenpaika3").html(nimi1);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva9.clone());
+   $("#tehtavanpaikka3").append(kortti9.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+
+   
+
+
+    }
+	//kierros 3
+	function kierros3(){
+	$('#kortti4').show();
+	  $("#nimenpaika4").html(tyhjennys);
+   $("#kuvanpaika4").html(tyhjennys);
+   $("#tehtavanpaikka4").html(tyhjennys);
+   $("#nappinpaikka4").html(tyhjennys);
+   
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[3] == 0) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva1.clone());
+   $("#tehtavanpaikka4").append(kortti1.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[3] == 1) {
+   
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva2.clone());
+   $("#tehtavanpaikka4").append(kortti2.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 2) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva3.clone());
+   $("#tehtavanpaikka4").append(kortti3.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 3) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva4.clone());
+   $("#tehtavanpaikka4").append(kortti4.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 4) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva5.clone());
+   $("#tehtavanpaikka4").append(kortti5.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 5) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva6.clone());
+   $("#tehtavanpaikka4").append(kortti6.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 6) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva7.clone());
+   $("#tehtavanpaikka4").append(kortti7.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 7) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva8.clone());
+   $("#tehtavanpaikka4").append(kortti8.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 8) {
+   $("#nimenpaika4").html(nimi2);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva9.clone());
+   $("#tehtavanpaikka4").append(kortti9.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+
+
+  }
+  //kierros4
+	function kierros4(){
+	if ($(window).width() < 600) {
+   $('#kortti4').hide();
+}
+	$('#kortti5').show();
+	  $("#nimenpaika5").html(tyhjennys);
+   $("#kuvanpaika5").html(tyhjennys);
+   $("#tehtavanpaikka5").html(tyhjennys);
+   $("#nappinpaikka5").html(tyhjennys);
+   
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[4] == 0) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva1.clone());
+   $("#tehtavanpaikka5").append(kortti1.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[4] == 1) {
+   
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva2.clone());
+   $("#tehtavanpaikka5").append(kortti2.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 2) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva3.clone());
+   $("#tehtavanpaikka5").append(kortti3.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 3) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva4.clone());
+   $("#tehtavanpaikka5").append(kortti4.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 4) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva5.clone());
+   $("#tehtavanpaikka5").append(kortti5.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 5) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva6.clone());
+   $("#tehtavanpaikka5").append(kortti6.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 6) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva7.clone());
+   $("#tehtavanpaikka5").append(kortti7.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 7) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva8.clone());
+   $("#tehtavanpaikka5").append(kortti8.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 8) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva9.clone());
+   $("#tehtavanpaikka5").append(kortti9.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+
+
+  }
+  //kierros5
+function kierros5(){
+if ($(window).width() < 600) {
+   $('#kortti5').hide();
+}
+$('#kortti6').show();
+ $("#nimenpaika6").html(tyhjennys);
+   $("#kuvanpaika6").html(tyhjennys);
+   $("#tehtavanpaikka6").html(tyhjennys);
+   $("#nappinpaikka6").html(tyhjennys);
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[5] == 0) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva1.clone());
+   $("#tehtavanpaikka6").append(kortti1.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[5] == 1) {
+   
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva2.clone());
+   $("#tehtavanpaikka6").append(kortti2.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 2) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva3.clone());
+   $("#tehtavanpaikka6").append(kortti3.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 3) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva4.clone());
+   $("#tehtavanpaikka6").append(kortti4.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 4) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva5.clone());
+   $("#tehtavanpaikka6").append(kortti5.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 5) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva6.clone());
+   $("#tehtavanpaikka6").append(kortti6.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 6) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva7.clone());
+   $("#tehtavanpaikka6").append(kortti7.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 7) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva8.clone());
+   $("#tehtavanpaikka6").append(kortti8.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 8) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva9.clone());
+   $("#tehtavanpaikka6").append(kortti9.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros6
+  function kierros6(){
+  $('#kortti7').show();
+   $("#nimenpaika7").html(tyhjennys);
+   $("#kuvanpaika7").html(tyhjennys);
+   $("#tehtavanpaikka7").html(tyhjennys);
+   $("#nappinpaikka7").html(tyhjennys);
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[6] == 0) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva1.clone());
+   $("#tehtavanpaikka7").append(kortti1.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[6] == 1) {
+   
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva2.clone());
+   $("#tehtavanpaikka7").append(kortti2.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 2) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva3.clone());
+   $("#tehtavanpaikka7").append(kortti3.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 3) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva4.clone());
+   $("#tehtavanpaikka7").append(kortti4.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 4) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva5.clone());
+   $("#tehtavanpaikka7").append(kortti5.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 5) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva6.clone());
+   $("#tehtavanpaikka7").append(kortti6.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 6) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva7.clone());
+   $("#tehtavanpaikka7").append(kortti7.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 7) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva8.clone());
+   $("#tehtavanpaikka7").append(kortti8.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 8) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva9.clone());
+   $("#tehtavanpaikka7").append(kortti9.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros7
+  function kierros7(){
+  if ($(window).width() < 600) {
+   $('#kortti7').hide();
+}
+  $('#kortti8').show();
+  $("#nimenpaika8").html(tyhjennys);
+   $("#kuvanpaika8").html(tyhjennys);
+   $("#tehtavanpaikka8").html(tyhjennys);
+   $("#nappinpaikka8").html(tyhjennys);
+  
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[7] == 0) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva1);
+   $("#tehtavanpaikka8").append(kortti1.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[7] == 1) {
+   
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva2.clone());
+   $("#tehtavanpaikka8").append(kortti2.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 2) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva3.clone());
+   $("#tehtavanpaikka8").append(kortti3.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 3) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva4.clone());
+   $("#tehtavanpaikka8").append(kortti4.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 4) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva5.clone());
+   $("#tehtavanpaikka8").append(kortti5.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 5) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva6.clone());
+   $("#tehtavanpaikka8").append(kortti6.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 6) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva7.clone());
+   $("#tehtavanpaikka8").append(kortti7.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 7) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva8.clone());
+   $("#tehtavanpaikka8").append(kortti8.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 8) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva9.clone());
+   $("#tehtavanpaikka8").append(kortti9.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros8
+    function kierros8(){
+	if ($(window).width() < 600) {
+   $('#kortti8').hide();
+}
+	$('#kortti9').show();
+	$("#nimenpaika9").html(tyhjennys);
+   $("#kuvanpaika9").html(tyhjennys);
+   $("#tehtavanpaikka9").html(tyhjennys);
+   $("#nappinpaikka9").html(tyhjennys);
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[8] == 0) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva1.clone());
+   $("#tehtavanpaikka9").append(kortti1.clone());
+   
+   
+       
+}
+if(result[8] == 1) {
+   
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva2.clone());
+   $("#tehtavanpaikka9").append(kortti2.clone());
+   
+   
+   
+}
+if(result[8] == 2) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva3.clone());
+   $("#tehtavanpaikka9").append(kortti3.clone());
+   
+   
+}
+if(result[8] == 3) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva4.clone());
+   $("#tehtavanpaikka9").append(kortti4.clone());
+  
+   
+   
+}
+if(result[8] == 4) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva5.clone());
+   $("#tehtavanpaikka9").append(kortti5.clone());
+   
+   
+   
+}
+if(result[8] == 5) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva6.clone());
+   $("#tehtavanpaikka9").append(kortti6.clone());
+  
+   
+   
+}
+if(result[8] == 6) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva7.clone());
+   $("#tehtavanpaikka9").append(kortti7.clone());
+   
+   
+   
+}
+if(result[8] == 7) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva8.clone());
+   $("#tehtavanpaikka9").append(kortti8.clone());
+  
+   
+   
+}
+if(result[8] == 8) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva9.clone());
+   $("#tehtavanpaikka9").append(kortti9.clone());
+  
+   
+   
+}
+  }
+};  
+ //if lause jos 3 pelaajaa
+if( $('#pelajat').val() == '3' && !(inputnimi1 =="") && !(inputnimi2 =="") && !(inputnimi3 =="")) {
+   
+ 
+  $('#virhe').hide();
+ var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+
+if(result[0] == 0) {
+
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva1.clone());
+   $("#tehtavanpaikka1").append(kortti1.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 1) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva2.clone());
+   $("#tehtavanpaikka1").append(kortti2.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 2) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva3.clone());
+   $("#tehtavanpaikka1").append(kortti3.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 3) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva4.clone());
+   $("#tehtavanpaikka1").append(kortti4.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 4) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva5.clone());
+   $("#tehtavanpaikka1").append(kortti5.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 5) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva6.clone());
+   $("#tehtavanpaikka1").append(kortti6.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 6) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva7.clone());
+   $("#tehtavanpaikka1").append(kortti7.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 7) {
+ $("#nimenpaika1").html(nimi1);
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva8.clone());
+   $("#tehtavanpaikka1").append(kortti8.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 8) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva9.clone());
+   $("#tehtavanpaikka1").append(kortti9.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+
+
+function kierros1(){
+if ($(window).width() < 600) {
+   $('#kortti1').hide();
+}
+	$('#kortti2').show();
+	$("#nimenpaika2").html(tyhjennys);
+   $("#kuvanpaika2").html(tyhjennys);
+   $("#tehtavanpaikka2").html(tyhjennys);
+	$("#nappinpaikka2").html(tyhjennys);
+
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[1] == 0) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva2.clone());
+   $("#tehtavanpaikka2").append(kortti1.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[1] == 1) {
+   
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva2);
+   $("#tehtavanpaikka2").append(kortti2.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 2) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva3.clone());
+   $("#tehtavanpaikka2").append(kortti3.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 3) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva4.clone());
+   $("#tehtavanpaikka2").append(kortti4.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 4) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva5.clone());
+   $("#tehtavanpaikka2").append(kortti5.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 5) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva6.clone());
+   $("#tehtavanpaikka2").append(kortti6.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 6) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva7.clone());
+   $("#tehtavanpaikka2").append(kortti7.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 7) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva8.clone());
+   $("#tehtavanpaikka2").append(kortti8.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 8) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva9.clone());
+   $("#tehtavanpaikka2").append(kortti9.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+
+
+    }
+	function kierros2(){
+	if ($(window).width() < 600) {
+   $('#kortti2').hide();
+}
+	$('#kortti3').show();
+	  $("#nimenpaika3").html(tyhjennys);
+   $("#kuvanpaika3").html(tyhjennys);
+   $("#tehtavanpaikka3").html(tyhjennys);
+   $("#nappinpaikka3").html(tyhjennys);
+   
+	var inputnimi3 = $("#nimi3").val();
+ var nimi3 = $("#nimi3").val();
+ var nimi3 = "<h4>" + "Pelaaja:" +" " + inputnimi3 + "</h4>";
+ 
+if(result[2] == 0) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva1.clone());
+   $("#tehtavanpaikka3").append(kortti1.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+       
+}
+if(result[2] == 1) {
+   
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva2.clone());
+   $("#tehtavanpaikka3").append(kortti2.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 2) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva3.clone());
+   $("#tehtavanpaikka3").append(kortti3.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 3) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva4.clone());
+   $("#tehtavanpaikka3").append(kortti4.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 4) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva5.clone());
+   $("#tehtavanpaikka3").append(kortti5.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 5) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva6.clone());
+   $("#tehtavanpaikka3").append(kortti6.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 6) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva7.clone());
+   $("#tehtavanpaikka3").append(kortti7.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 7) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva8.clone());
+   $("#tehtavanpaikka3").append(kortti8.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 8) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva9.clone());
+   $("#tehtavanpaikka3").append(kortti9.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+
+   
+
+
+    }
+	//kierros 3
+	function kierros3(){
+	$('#kortti4').show();
+	  $("#nimenpaika4").html(tyhjennys);
+   $("#kuvanpaika4").html(tyhjennys);
+   $("#tehtavanpaikka4").html(tyhjennys);
+   $("#nappinpaikka4").html(tyhjennys);
+   
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[3] == 0) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva1.clone());
+   $("#tehtavanpaikka4").append(kortti1.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[3] == 1) {
+   
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva2.clone());
+   $("#tehtavanpaikka4").append(kortti2.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 2) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva3.clone());
+   $("#tehtavanpaikka4").append(kortti3.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 3) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva4.clone());
+   $("#tehtavanpaikka4").append(kortti4.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 4) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva5.clone());
+   $("#tehtavanpaikka4").append(kortti5.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 5) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva6.clone());
+   $("#tehtavanpaikka4").append(kortti6.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 6) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva7.clone());
+   $("#tehtavanpaikka4").append(kortti7.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 7) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva8.clone());
+   $("#tehtavanpaikka4").append(kortti8.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 8) {
+   $("#nimenpaika4").html(nimi1);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva9.clone());
+   $("#tehtavanpaikka4").append(kortti9.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+
+
+  }
+  //kierros4
+	function kierros4(){
+	if ($(window).width() < 600) {
+   $('#kortti4').hide();
+}
+	$('#kortti5').show();
+	  $("#nimenpaika5").html(tyhjennys);
+   $("#kuvanpaika5").html(tyhjennys);
+   $("#tehtavanpaikka5").html(tyhjennys);
+   $("#nappinpaikka5").html(tyhjennys);
+   
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[4] == 0) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva1.clone());
+   $("#tehtavanpaikka5").append(kortti1.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[4] == 1) {
+   
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva2.clone());
+   $("#tehtavanpaikka5").append(kortti2.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 2) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva3.clone());
+   $("#tehtavanpaikka5").append(kortti3.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 3) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva4.clone());
+   $("#tehtavanpaikka5").append(kortti4.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 4) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva5.clone());
+   $("#tehtavanpaikka5").append(kortti5.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 5) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva6.clone());
+   $("#tehtavanpaikka5").append(kortti6.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 6) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva7.clone());
+   $("#tehtavanpaikka5").append(kortti7.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 7) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva8.clone());
+   $("#tehtavanpaikka5").append(kortti8.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 8) {
+   $("#nimenpaika5").html(nimi2);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva9.clone());
+   $("#tehtavanpaikka5").append(kortti9.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+
+
+  }
+  //kierros5
+function kierros5(){
+if ($(window).width() < 600) {
+   $('#kortti5').hide();
+}
+
+$('#kortti6').show();
+ $("#nimenpaika6").html(tyhjennys);
+   $("#kuvanpaika6").html(tyhjennys);
+   $("#tehtavanpaikka6").html(tyhjennys);
+   $("#nappinpaikka6").html(tyhjennys);
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi3 = $("#nimi3").val();
+ var nimi3 = $("#nimi3").val();
+ var nimi3 = "<h4>" + "Pelaaja:" +" " + inputnimi3 + "</h4>";
+ 
+if(result[5] == 0) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva1.clone());
+   $("#tehtavanpaikka6").append(kortti1.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[5] == 1) {
+   
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva2.clone());
+   $("#tehtavanpaikka6").append(kortti2.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 2) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva3.clone());
+   $("#tehtavanpaikka6").append(kortti3.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 3) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva4.clone());
+   $("#tehtavanpaikka6").append(kortti4.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 4) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva5.clone());
+   $("#tehtavanpaikka6").append(kortti5.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 5) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva6.clone());
+   $("#tehtavanpaikka6").append(kortti6.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 6) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva7.clone());
+   $("#tehtavanpaikka6").append(kortti7.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 7) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva8.clone());
+   $("#tehtavanpaikka6").append(kortti8.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 8) {
+   $("#nimenpaika6").html(nimi3);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva9.clone());
+   $("#tehtavanpaikka6").append(kortti9.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros6
+  function kierros6(){
+  
+  
+  $('#kortti7').show();
+   $("#nimenpaika7").html(tyhjennys);
+   $("#kuvanpaika7").html(tyhjennys);
+   $("#tehtavanpaikka7").html(tyhjennys);
+   $("#nappinpaikka7").html(tyhjennys);
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[6] == 0) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva1.clone());
+   $("#tehtavanpaikka7").append(kortti1.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[6] == 1) {
+   
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva2.clone());
+   $("#tehtavanpaikka7").append(kortti2.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 2) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva3.clone());
+   $("#tehtavanpaikka7").append(kortti3.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 3) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva4.clone());
+   $("#tehtavanpaikka7").append(kortti4.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 4) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva5.clone());
+   $("#tehtavanpaikka7").append(kortti5.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 5) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva6.clone());
+   $("#tehtavanpaikka7").append(kortti6.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 6) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva7.clone());
+   $("#tehtavanpaikka7").append(kortti7.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 7) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva8.clone());
+   $("#tehtavanpaikka7").append(kortti8.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 8) {
+   $("#nimenpaika7").html(nimi1);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva9.clone());
+   $("#tehtavanpaikka7").append(kortti9.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros7
+  function kierros7(){
+  if ($(window).width() < 600) {
+   $('#kortti7').hide();
+}
+  
+  $('#kortti8').show();
+  $("#nimenpaika8").html(tyhjennys);
+   $("#kuvanpaika8").html(tyhjennys);
+   $("#tehtavanpaikka8").html(tyhjennys);
+   $("#nappinpaikka8").html(tyhjennys);
+  
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[7] == 0) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva1);
+   $("#tehtavanpaikka8").append(kortti1.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[7] == 1) {
+   
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva2.clone());
+   $("#tehtavanpaikka8").append(kortti2.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 2) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva3.clone());
+   $("#tehtavanpaikka8").append(kortti3.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 3) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva4.clone());
+   $("#tehtavanpaikka8").append(kortti4.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 4) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva5.clone());
+   $("#tehtavanpaikka8").append(kortti5.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 5) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva6.clone());
+   $("#tehtavanpaikka8").append(kortti6.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 6) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva7.clone());
+   $("#tehtavanpaikka8").append(kortti7.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 7) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva8.clone());
+   $("#tehtavanpaikka8").append(kortti8.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 8) {
+   $("#nimenpaika8").html(nimi2);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva9.clone());
+   $("#tehtavanpaikka8").append(kortti9.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros8
+    function kierros8(){
+	if ($(window).width() < 600) {
+   $('#kortti8').hide();
+}
+	$('#kortti9').show();
+	$("#nimenpaika9").html(tyhjennys);
+   $("#kuvanpaika9").html(tyhjennys);
+   $("#tehtavanpaikka9").html(tyhjennys);
+   $("#nappinpaikka9").html(tyhjennys);
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi3 = $("#nimi3").val();
+ var nimi3 = $("#nimi3").val();
+ var nimi3 = "<h4>" + "Pelaaja:" +" " + inputnimi3 + "</h4>";
+ 
+if(result[8] == 0) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva1.clone());
+   $("#tehtavanpaikka9").append(kortti1.clone());
+   
+   
+       
+}
+if(result[8] == 1) {
+   
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva2.clone());
+   $("#tehtavanpaikka9").append(kortti2.clone());
+   
+   
+   
+}
+if(result[8] == 2) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva3.clone());
+   $("#tehtavanpaikka9").append(kortti3.clone());
+   
+   
+}
+if(result[8] == 3) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva4.clone());
+   $("#tehtavanpaikka9").append(kortti4.clone());
+  
+   
+   
+}
+if(result[8] == 4) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva5.clone());
+   $("#tehtavanpaikka9").append(kortti5.clone());
+   
+   
+   
+}
+if(result[8] == 5) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva6.clone());
+   $("#tehtavanpaikka9").append(kortti6.clone());
+  
+   
+   
+}
+if(result[8] == 6) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva7.clone());
+   $("#tehtavanpaikka9").append(kortti7.clone());
+   
+   
+   
+}
+if(result[8] == 7) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva8.clone());
+   $("#tehtavanpaikka9").append(kortti8.clone());
+  
+   
+   
+}
+if(result[8] == 8) {
+   $("#nimenpaika9").html(nimi3);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva9.clone());
+   $("#tehtavanpaikka9").append(kortti9.clone());
+  
+   
+   
+}
+  }
+};  
+if( $('#pelajat').val() == '4' && !(inputnimi1 =="") && !(inputnimi2 =="") && !(inputnimi3 =="") && !(inputnimi4 =="")) {
+   
+ 
+  $('#virhe').hide();
+ var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+
+if(result[0] == 0) {
+
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva1.clone());
+   $("#tehtavanpaikka1").append(kortti1.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 1) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva2.clone());
+   $("#tehtavanpaikka1").append(kortti2.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 2) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva3.clone());
+   $("#tehtavanpaikka1").append(kortti3.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 3) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva4.clone());
+   $("#tehtavanpaikka1").append(kortti4.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 4) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva5.clone());
+   $("#tehtavanpaikka1").append(kortti5.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 5) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva6.clone());
+   $("#tehtavanpaikka1").append(kortti6.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 6) {
+     $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva7.clone());
+   $("#tehtavanpaikka1").append(kortti7.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 7) {
+ $("#nimenpaika1").html(nimi1);
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva8.clone());
+   $("#tehtavanpaikka1").append(kortti8.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+if(result[0] == 8) {
+    $("#nimenpaika1").html(nimi1);
+   $('#kortti1').show();
+   $("#kuvanpaika1").append(kuva9.clone());
+   $("#tehtavanpaikka1").append(kortti9.clone());
+   $("#nappinpaikka1").append(uusnappi.clone());
+	 $("#jatkaa").click(function(){
+	 kierros1(); 
+	 $(this).hide();
+	});
+}
+
+
+function kierros1(){
+if ($(window).width() < 600) {
+   $('#kortti1').hide();
+}
+	$('#kortti2').show();
+	$("#nimenpaika2").html(tyhjennys);
+   $("#kuvanpaika2").html(tyhjennys);
+   $("#tehtavanpaikka2").html(tyhjennys);
+	$("#nappinpaikka2").html(tyhjennys);
+
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[1] == 0) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva2.clone());
+   $("#tehtavanpaikka2").append(kortti1.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[1] == 1) {
+   
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva2);
+   $("#tehtavanpaikka2").append(kortti2.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 2) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva3.clone());
+   $("#tehtavanpaikka2").append(kortti3.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 3) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva4.clone());
+   $("#tehtavanpaikka2").append(kortti4.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 4) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva5.clone());
+   $("#tehtavanpaikka2").append(kortti5.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 5) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva6.clone());
+   $("#tehtavanpaikka2").append(kortti6.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 6) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva7.clone());
+   $("#tehtavanpaikka2").append(kortti7.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 7) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva8.clone());
+   $("#tehtavanpaikka2").append(kortti8.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[1] == 8) {
+   $("#nimenpaika2").html(nimi2);
+   $('#kortti2').slideDown("fast");
+   $("#kuvanpaika2").append(kuva9.clone());
+   $("#tehtavanpaikka2").append(kortti9.clone());
+   $("#nappinpaikka2").append(uusnappi2.clone());
+   $("#jatkaa2").click(function(){
+	 kierros2(); 
+	 $(this).hide();
+	});
+   
+}
+
+
+    }
+	function kierros2(){
+	if ($(window).width() < 600) {
+   $('#kortti2').hide();
+}
+	$('#kortti3').show();
+	  $("#nimenpaika3").html(tyhjennys);
+   $("#kuvanpaika3").html(tyhjennys);
+   $("#tehtavanpaikka3").html(tyhjennys);
+   $("#nappinpaikka3").html(tyhjennys);
+   
+	var inputnimi3 = $("#nimi3").val();
+ var nimi3 = $("#nimi3").val();
+ var nimi3 = "<h4>" + "Pelaaja:" +" " + inputnimi3 + "</h4>";
+ 
+if(result[2] == 0) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva1.clone());
+   $("#tehtavanpaikka3").append(kortti1.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+       
+}
+if(result[2] == 1) {
+   
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva2.clone());
+   $("#tehtavanpaikka3").append(kortti2.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 2) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva3.clone());
+   $("#tehtavanpaikka3").append(kortti3.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 3) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva4.clone());
+   $("#tehtavanpaikka3").append(kortti4.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 4) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva5.clone());
+   $("#tehtavanpaikka3").append(kortti5.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 5) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva6.clone());
+   $("#tehtavanpaikka3").append(kortti6.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 6) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva7.clone());
+   $("#tehtavanpaikka3").append(kortti7.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 7) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva8.clone());
+   $("#tehtavanpaikka3").append(kortti8.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+if(result[2] == 8) {
+   $("#nimenpaika3").html(nimi3);
+   $('#kortti3').slideDown("fast");
+   $("#kuvanpaika3").append(kuva9.clone());
+   $("#tehtavanpaikka3").append(kortti9.clone());
+   $("#nappinpaikka3").append(uusnappi3.clone());
+   $("#jatkaa3").click(function(){
+	 kierros3(); 
+	 $(this).hide();
+	});
+   
+}
+
+   
+
+
+    }
+	//kierros 3
+	function kierros3(){
+	$('#kortti4').show();
+	  $("#nimenpaika4").html(tyhjennys);
+   $("#kuvanpaika4").html(tyhjennys);
+   $("#tehtavanpaikka4").html(tyhjennys);
+   $("#nappinpaikka4").html(tyhjennys);
+   
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi4 = $("#nimi4").val();
+ var nimi4 = $("#nimi4").val();
+ var nimi4 = "<h4>" + "Pelaaja:" +" " + inputnimi4 + "</h4>";
+ 
+if(result[3] == 0) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva1.clone());
+   $("#tehtavanpaikka4").append(kortti1.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[3] == 1) {
+   
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva2.clone());
+   $("#tehtavanpaikka4").append(kortti2.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 2) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva3.clone());
+   $("#tehtavanpaikka4").append(kortti3.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 3) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva4.clone());
+   $("#tehtavanpaikka4").append(kortti4.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 4) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva5.clone());
+   $("#tehtavanpaikka4").append(kortti5.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 5) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva6.clone());
+   $("#tehtavanpaikka4").append(kortti6.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 6) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva7.clone());
+   $("#tehtavanpaikka4").append(kortti7.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 7) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva8.clone());
+   $("#tehtavanpaikka4").append(kortti8.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[3] == 8) {
+   $("#nimenpaika4").html(nimi4);
+   $('#kortti4').slideDown("fast");
+   $("#kuvanpaika4").append(kuva9.clone());
+   $("#tehtavanpaikka4").append(kortti9.clone());
+   $("#nappinpaikka4").append(uusnappi4.clone());
+    $("#jatkaa4").click(function(){
+	 kierros4(); 
+	 $(this).hide();
+	});
+   
+   
+}
+
+
+  }
+  //kierros4
+	function kierros4(){
+	if ($(window).width() < 600) {
+   $('#kortti4').hide();
+}
+	$('#kortti5').show();
+	  $("#nimenpaika5").html(tyhjennys);
+   $("#kuvanpaika5").html(tyhjennys);
+   $("#tehtavanpaikka5").html(tyhjennys);
+   $("#nappinpaikka5").html(tyhjennys);
+   
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[4] == 0) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva1.clone());
+   $("#tehtavanpaikka5").append(kortti1.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[4] == 1) {
+   
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva2.clone());
+   $("#tehtavanpaikka5").append(kortti2.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 2) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva3.clone());
+   $("#tehtavanpaikka5").append(kortti3.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 3) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva4.clone());
+   $("#tehtavanpaikka5").append(kortti4.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 4) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva5.clone());
+   $("#tehtavanpaikka5").append(kortti5.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 5) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva6.clone());
+   $("#tehtavanpaikka5").append(kortti6.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 6) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva7.clone());
+   $("#tehtavanpaikka5").append(kortti7.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 7) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva8.clone());
+   $("#tehtavanpaikka5").append(kortti8.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[4] == 8) {
+   $("#nimenpaika5").html(nimi1);
+   $('#kortti5').slideDown("fast");
+   $("#kuvanpaika5").append(kuva9.clone());
+   $("#tehtavanpaikka5").append(kortti9.clone());
+   $("#nappinpaikka5").append(uusnappi5.clone());
+    $("#jatkaa5").click(function(){
+	 kierros5(); 
+	 $(this).hide();
+	});
+   
+   
+}
+
+
+  }
+  //kierros5
+function kierros5(){
+if ($(window).width() < 600) {
+   $('#kortti5').hide();
+}
+$('#kortti6').show();
+ $("#nimenpaika6").html(tyhjennys);
+   $("#kuvanpaika6").html(tyhjennys);
+   $("#tehtavanpaikka6").html(tyhjennys);
+   $("#nappinpaikka6").html(tyhjennys);
+	$('#kortti1').hide();
+	$('#kortti2').hide();
+	$('#kortti3').hide();
+	
+	var inputnimi2 = $("#nimi2").val();
+ var nimi2 = $("#nimi2").val();
+ var nimi2 = "<h4>" + "Pelaaja:" +" " + inputnimi2 + "</h4>";
+ 
+if(result[5] == 0) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva1.clone());
+   $("#tehtavanpaikka6").append(kortti1.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[5] == 1) {
+   
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva2.clone());
+   $("#tehtavanpaikka6").append(kortti2.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 2) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva3.clone());
+   $("#tehtavanpaikka6").append(kortti3.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 3) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva4.clone());
+   $("#tehtavanpaikka6").append(kortti4.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 4) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva5.clone());
+   $("#tehtavanpaikka6").append(kortti5.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 5) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva6.clone());
+   $("#tehtavanpaikka6").append(kortti6.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 6) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva7.clone());
+   $("#tehtavanpaikka6").append(kortti7.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 7) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva8.clone());
+   $("#tehtavanpaikka6").append(kortti8.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[5] == 8) {
+   $("#nimenpaika6").html(nimi2);
+   $('#kortti6').slideDown("fast");
+   $("#kuvanpaika6").append(kuva9.clone());
+   $("#tehtavanpaikka6").append(kortti9.clone());
+   $("#nappinpaikka6").append(uusnappi6.clone());
+    $("#jatkaa6").click(function(){
+	 kierros6(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros6
+  function kierros6(){
+  $('#kortti7').show();
+   $("#nimenpaika7").html(tyhjennys);
+   $("#kuvanpaika7").html(tyhjennys);
+   $("#tehtavanpaikka7").html(tyhjennys);
+   $("#nappinpaikka7").html(tyhjennys);
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi3 = $("#nimi3").val();
+ var nimi3 = $("#nimi3").val();
+ var nimi3 = "<h4>" + "Pelaaja:" +" " + inputnimi3 + "</h4>";
+ 
+if(result[6] == 0) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva1.clone());
+   $("#tehtavanpaikka7").append(kortti1.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[6] == 1) {
+   
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva2.clone());
+   $("#tehtavanpaikka7").append(kortti2.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 2) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva3.clone());
+   $("#tehtavanpaikka7").append(kortti3.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 3) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva4.clone());
+   $("#tehtavanpaikka7").append(kortti4.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 4) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva5.clone());
+   $("#tehtavanpaikka7").append(kortti5.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 5) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva6.clone());
+   $("#tehtavanpaikka7").append(kortti6.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 6) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva7.clone());
+   $("#tehtavanpaikka7").append(kortti7.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 7) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva8.clone());
+   $("#tehtavanpaikka7").append(kortti8.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[6] == 8) {
+   $("#nimenpaika7").html(nimi3);
+   $('#kortti7').slideDown("fast");
+   $("#kuvanpaika7").append(kuva9.clone());
+   $("#tehtavanpaikka7").append(kortti9.clone());
+   $("#nappinpaikka7").append(uusnappi7.clone());
+    $("#jatkaa7").click(function(){
+	 kierros7(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros7
+  function kierros7(){
+  if ($(window).width() < 600) {
+   $('#kortti7').hide();
+}
+  $('#kortti8').show();
+  $("#nimenpaika8").html(tyhjennys);
+   $("#kuvanpaika8").html(tyhjennys);
+   $("#tehtavanpaikka8").html(tyhjennys);
+   $("#nappinpaikka8").html(tyhjennys);
+  
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi4 = $("#nimi4").val();
+ var nimi4 = $("#nimi4").val();
+ var nimi4 = "<h4>" + "Pelaaja:" +" " + inputnimi4 + "</h4>";
+ 
+if(result[7] == 0) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva1);
+   $("#tehtavanpaikka8").append(kortti1.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+       
+}
+if(result[7] == 1) {
+   
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva2.clone());
+   $("#tehtavanpaikka8").append(kortti2.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 2) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva3.clone());
+   $("#tehtavanpaikka8").append(kortti3.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 3) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva4.clone());
+   $("#tehtavanpaikka8").append(kortti4.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 4) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva5.clone());
+   $("#tehtavanpaikka8").append(kortti5.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 5) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva6.clone());
+   $("#tehtavanpaikka8").append(kortti6.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 6) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva7.clone());
+   $("#tehtavanpaikka8").append(kortti7.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 7) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva8.clone());
+   $("#tehtavanpaikka8").append(kortti8.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+if(result[7] == 8) {
+   $("#nimenpaika8").html(nimi4);
+   $('#kortti8').slideDown("fast");
+   $("#kuvanpaika8").append(kuva9.clone());
+   $("#tehtavanpaikka8").append(kortti9.clone());
+   $("#nappinpaikka8").append(uusnappi8.clone());
+    $("#jatkaa8").click(function(){
+	 kierros8(); 
+	 $(this).hide();
+	});
+   
+   
+}
+  }
+  //kierros8
+    function kierros8(){
+	if ($(window).width() < 600) {
+   $('#kortti8').hide();
+}
+	
+	$('#kortti9').show();
+	$("#nimenpaika9").html(tyhjennys);
+   $("#kuvanpaika9").html(tyhjennys);
+   $("#tehtavanpaikka9").html(tyhjennys);
+   $("#nappinpaikka9").html(tyhjennys);
+	$('#kortti4').hide();
+	$('#kortti5').hide();
+	$('#kortti6').hide();
+	
+	var inputnimi1 = $("#nimi1").val();
+ var nimi1 = $("#nimi1").val();
+ var nimi1 = "<h4>" + "Pelaaja:" +" " + inputnimi1 + "</h4>";
+ 
+if(result[8] == 0) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva1.clone());
+   $("#tehtavanpaikka9").append(kortti1.clone());
+   
+   
+       
+}
+if(result[8] == 1) {
+   
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva2.clone());
+   $("#tehtavanpaikka9").append(kortti2.clone());
+   
+   
+   
+}
+if(result[8] == 2) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva3.clone());
+   $("#tehtavanpaikka9").append(kortti3.clone());
+   
+   
+}
+if(result[8] == 3) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva4.clone());
+   $("#tehtavanpaikka9").append(kortti4.clone());
+  
+   
+   
+}
+if(result[8] == 4) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva5.clone());
+   $("#tehtavanpaikka9").append(kortti5.clone());
+   
+   
+   
+}
+if(result[8] == 5) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva6.clone());
+   $("#tehtavanpaikka9").append(kortti6.clone());
+  
+   
+   
+}
+if(result[8] == 6) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva7.clone());
+   $("#tehtavanpaikka9").append(kortti7.clone());
+   
+   
+   
+}
+if(result[8] == 7) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva8.clone());
+   $("#tehtavanpaikka9").append(kortti8.clone());
+  
+   
+   
+}
+if(result[8] == 8) {
+   $("#nimenpaika9").html(nimi1);
+   $('#kortti9').slideDown("fast");
+   $("#kuvanpaika9").append(kuva9.clone());
+   $("#tehtavanpaikka9").append(kortti9.clone());
+  
+   
+   
+}
+  }
+};  
+
+    });
+	
+	$("#lopetus").click(function(){
+   $('#nimi1').val('');
+   $('#nimi2').val('');
+   $('#nimi3').val('');
+   $('#nimi4').val('');
+   $('#korttipakka').hide();
+
+});
+	
+	
+});
+	
+
+	
+
+</script>
+
+</html>
+
